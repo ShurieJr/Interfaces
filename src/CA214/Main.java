@@ -10,7 +10,7 @@ public class Main {
 
         Address address = new Address("Hodan");
 
-        shallowcopy obj1    = new shallowcopy("Ali" , colors , address );
+        shallowcopy obj1 = new shallowcopy("Ali" , colors , address );
         shallowcopy obj2 = obj1.clone();
 
         //change
@@ -21,9 +21,10 @@ public class Main {
 
 
         //obj2
- ArrayList<String> newc = new ArrayList<String>();
-        newc.add("yellow");
-        obj2.setColors(newc);
+ //ArrayList<String> newc = new ArrayList<String>();
+        //newc.add("yellow");
+        obj2.colors.add("yellow");
+        obj2.setColors(colors);
 
         System.out.println("obj1 colors:");
         for(String color : obj1.getColors())

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class shallowcopy implements Cloneable {
     private String name;
-    private ArrayList<String> colors; // reference type
+    ArrayList<String> colors; // reference type
     private Address address;  // reference type
     public shallowcopy(String name, ArrayList<String> colors , Address address) {
         this.name = name;
@@ -40,7 +40,7 @@ public class shallowcopy implements Cloneable {
     public shallowcopy clone() throws CloneNotSupportedException {
          shallowcopy copied = (shallowcopy) super.clone();
          copied.address = new Address(this.getAddress().getCity());
-         copied.colors = new ArrayList<>(this.getColors());
+         copied.colors = new ArrayList<>(this.colors);
 
          return copied;
          //return (shallowcopy) super.clone(); // shallow copy
